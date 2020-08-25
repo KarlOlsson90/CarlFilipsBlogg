@@ -12,18 +12,16 @@ function getPostsModel(req, res){
 }
 
 async function getSinglePostModel(id){
+    
     //FUNGERAR!
-    console.log("aktiverade getSinglePostModel")
-    console.log(id)
     const result = await db.findOne({ _id: id })
-    console.log(result)
     return result;
     
 }
 
 function postPostModel(blogPost){
     console.log("aktiverade postPostModel")
-//FUNGERAR!
+        //FUNGERAR!
         db.insert(blogPost, (err, newDoc) => {
             if(!err) {
                 resolve(newDoc);
