@@ -3,12 +3,10 @@ const model = require('../models/postsModel');
 console.log('postsController körs')
 
 
-function getPostsController(req, res){
+async function getPostsController(req, res){
 
-    // model.
-    console.log("getPostsController körs")
-    model.getPostsModel()
-    res.send("getPostsController körs")
+    const post = await model.getPostsModel()
+    res.json(post)
 
 }
 async function getSinglePostController(req, res){
@@ -19,22 +17,41 @@ async function getSinglePostController(req, res){
     
 
 }
+
+async function countController (req, res) { //Ger antalet dokument i databasen
+    const countedPosts = await model.count()
+    res.json(countedPosts)
+}
+
+async function ownerController(req, res) { //Ger dokumentet för ägaren av inlägget
+    const id = req.body._id
+    const owner = await model.isOwner(id)
+    res.json(owner)
+}
+
 function postPostController(req, res) {
     
         const blogPost = {
             title: req.body.title,
-            content: req.body.content
+            content: req.body.content,
+            owner: req.body.owner
         }
     
         model.postPostModel(blogPost);
         
-        res.json("Lade till " + blogPost)
+        res.json("Lade till " + blogPost.title)
     
 
 }
-function deletePostController(){
+async function deletePostController(req, res){
 
-    // model.
+    try {
+        let id = req.params.id;
+        await model.deletePostModel(id)
+        res.json("Deleted")
+    } catch (error) {
+        res.json({error: error.message})
+    }
 
 }
 function patchPostController(){
@@ -48,5 +65,7 @@ module.exports = {
     getSinglePostController,
     postPostController,
     deletePostController,
-    patchPostController
+    patchPostController,
+    countController,
+    ownerController
 }
