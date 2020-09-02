@@ -1,7 +1,6 @@
 const db = require('../database/database');
 
 async function getUserModel(username){
-    console.log('getUserModel');
 
     const user = await db.users.findOne({ username: username })
     return user;
@@ -21,6 +20,10 @@ function postUserModel(credentials){
     
 }
 
+function createAdminModel () {
+
+}
+
 function clear() {
     db.users.remove({}, {multi: true})
 }
@@ -30,5 +33,6 @@ function clear() {
 module.exports = {
     getUserModel,
     postUserModel,
-    clear
+    clear,
+    createAdminModel
 }

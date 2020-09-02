@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 //Routes
 app.use('/', routes)
 
-//Server
-const port = 5000
-app.listen(port);
-console.log("Server running on port " + port + ";")
+//Serverr
+
+
+module.exports = app;

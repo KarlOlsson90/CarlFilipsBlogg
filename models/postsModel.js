@@ -1,6 +1,5 @@
 const db = require('../database/database');
 
-console.log('postmodel')
 
 function getPostsModel(req, res) {
 
@@ -28,7 +27,7 @@ function count() { //Ger antalet dokument i databasen
 
         try {
             const countPost = await db.posts.count({})
-            console.log(countPost)
+            // console.log(countPost)
             resolve(countPost)
         } catch (error) {
             console.log(err)
@@ -60,7 +59,6 @@ async function getSinglePostModel(id) {
 }
 
 function postPostModel(blogPost) {
-    console.log("aktiverade postPostModel")
     return new Promise(async (resolve, reject) => {
         try {
             const post = await db.posts.insert(blogPost);
@@ -87,7 +85,7 @@ function deletePostModel(id) {
     return new Promise(async(resolve, reject) => {
         try {
             const deletedPost = await db.posts.remove({ _id: id })
-            console.log(deletedPost)
+            // console.log(deletedPost)
             resolve(deletedPost)
 
         } catch (error) {
@@ -108,7 +106,7 @@ function editPostModel(id, task) {
 
         try {
             const post = await db.posts.update({ _id: id }, { $set: task });
-            console.log(post + " post");
+            // console.log(post + " post");
 
             resolve(post);
         } catch (error) {
