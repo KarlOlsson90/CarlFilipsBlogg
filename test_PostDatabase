@@ -1,8 +1,21 @@
 {"title":"Alexandre","content":"philip","owner":"philip","_id":"1"}
 {"title":"Testa detta med patrik hihi","content":"Vi har det så himla kul","owner":"patrik","_id":"2"}
 {"title":"Testa detta med patrik hihi","content":"Vi har det så himla kul","_id":"3"}
-{"title":"Testa detta med patrik hihi","content":"Vi har det så himla kul","owner":"philip","_id":"4"}
-{"title":"Alexandre","content":"philip","owner":"philip","_id":"5"}
+{"$$deleted":true,"_id":"1"}
+{"$$deleted":true,"_id":"2"}
+{"$$deleted":true,"_id":"3"}
+{"title":"Alexandre","content":"philip","owner":"philip","_id":"1"}
+{"title":"Testa detta med patrik hihi","content":"Vi har det så himla kul","owner":"patrik","_id":"2"}
+{"$$deleted":true,"_id":"1"}
+{"$$deleted":true,"_id":"2"}
+{"title":"Alexandre","content":"philip","owner":"philip","_id":"1"}
+{"title":"Testa detta med patrik hihi","content":"Vi har det så himla kul","owner":"patrik","_id":"2"}
+{"$$deleted":true,"_id":"1"}
+{"$$deleted":true,"_id":"2"}
 {"title":"hej","content":"vad gör du?","owner":"philip","_id":"6"}
-{"title":"Alexandre","content":"philip","owner":"philip","_id":"5"}
 {"$$deleted":true,"_id":"6"}
+{"title":"Alexandre","content":"philip","owner":"philip","_id":"1"}
+{"title":"Elin","content":"phip","owner":"philip","_id":"1"}
+{"$$deleted":true,"_id":"1"}
+{"title":"Alexandre","content":"philip","owner":"philip","_id":"1"}
+{"$$deleted":true,"_id":"1"}
