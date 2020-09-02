@@ -11,6 +11,6 @@ router.delete('/posts/:id', controller.deletePostController)
 router.get('/countposts', controller.countController)
 router.get('/owner', controller.ownerController)
 
-//router.patch('/posts/:id', controller.patchPostController)
+router.put('/posts/:id', controller.editPostController)
 
 module.exports = router

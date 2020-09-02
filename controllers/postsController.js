@@ -54,9 +54,19 @@ async function deletePostController(req, res){
     }
 
 }
-function patchPostController(){
+function editPostController(req, res){
 
-    // model.
+    try {
+        var id = req.params.id;
+        let task = {
+            title: req.body.title,
+            content: req.body.content
+        }
+        const updatedToDo =  model.editPostModel(id, task)
+        res.json("Todo uppdaterad: " + task.title + " " + task.content);
+    } catch (error) {
+        console.log({ error: error.message })
+    }
 
 }
 
@@ -65,7 +75,7 @@ module.exports = {
     getSinglePostController,
     postPostController,
     deletePostController,
-    patchPostController,
+    editPostController,
     countController,
     ownerController
 }
